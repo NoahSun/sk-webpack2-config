@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [
+            "es2017",
+            "dom"
+        ]
+    },
+    "include": [
+        "node_modules/jquery"
+    ]
+}
