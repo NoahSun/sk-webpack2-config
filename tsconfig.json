@@ -9,6 +9,7 @@
             "dom"
         ]
     },
-    "include": [],
-    "exclude": []
+    "include": [
+        "node_modules/@types/**/*"
+    ]
 }

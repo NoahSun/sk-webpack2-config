@@ -41,14 +41,6 @@
     "webpack-plugin-manifest": "^1.1.0"
   },
   "dependencies": {
-    "expand-range": "^2.0.1",
-    "filename-regex": "^2.0.1",
-    "is-posix-bracket": "^0.1.1",
-    "jquery": "^3.2.1",
-    "normalize-path": "^2.1.1",
-    "object.omit": "^2.0.1",
-    "opn": "^5.1.0",
-    "preserve": "^0.2.0",
-    "regex-cache": "^0.4.3"
+    "jquery": "^3.2.1"
   }
 }
