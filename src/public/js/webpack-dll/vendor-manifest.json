@@ -1,1 +1,1 @@
-{"name":"vendor_library","content":{"./node_modules/jquery/dist/jquery.js":{"id":1,"meta":{}}}}
+{"name":"vendor_library","content":{"./node_modules/jquery/dist/jquery.min.js":{"id":1,"meta":{}},"./node_modules/webpack/buildin/amd-options.js":{"id":2,"meta":{}}}}

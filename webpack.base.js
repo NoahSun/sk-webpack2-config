@@ -67,7 +67,7 @@ module.exports = {
         }),
         new CommonsChunkPlugin({
             name: ['commons', 'manifest'],
-            filename: 'commons.js',
+            filename: '[name].commons.js',
             // children: true,
             // async: true
         }),

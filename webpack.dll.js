@@ -7,7 +7,10 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 /**
  * VENDORS: 类库提供者
  */
-const VENDORS = ['jquery'];
+const VENDORS = [
+    'jquery/dist/jquery.min.js',
+    // 'jquery/dist/jquery.slim.min.js',   //去除了ajax模块
+];
 
 module.exports = {
     entry: {
