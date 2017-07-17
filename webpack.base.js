@@ -75,7 +75,7 @@ module.exports = {
         }),
         new HtmlWebpackIncludeAssetsPlugin({
             assets: [
-                path.join(webpackConstant.OutputPublicJsPath, 'webpack-dll\/vendor.dll.js'),
+                path.join(webpackConstant.OutputPublicJsPath, 'webpack-dll/vendor.dll.js'),
                 // 如果有第三方css的话，可以继续加入 ↓
                 // path.join(webpackConstant.OutputPublicCssPath, 'some/path/of/vendor/*.css')
             ],
