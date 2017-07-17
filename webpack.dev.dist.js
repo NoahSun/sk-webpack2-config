@@ -85,7 +85,7 @@ module.exports = WebpackMerge(WebpackCommon, {
         }),
         new NamedModulesPlugin(),
         new ExtractTextPlugin({
-            filename: path.join(webpackConstant.OutputPublicCssPath, '[name].css')
+            filename: path.join(webpackConstant.OutputPublicCssPath, '[name].[hash].css')
         }),
         // new UglifyJsPlugin({
         //     compress: {

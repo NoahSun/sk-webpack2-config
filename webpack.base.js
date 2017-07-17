@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const ProvidePlugin = webpack.ProvidePlugin;
 const DllReferencePlugin = webpack.DllReferencePlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -60,22 +61,38 @@ module.exports = {
             'window.$': 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new HtmlWebpackPlugin({
-            title: 'Output Management',
-            template: path.resolve('./src/index.html'),
-            favicon: path.resolve('./src/favicon_16X16.ico')
-        }),
-        new CommonsChunkPlugin({
-            name: ['commons', 'manifest'],
-            filename: '[name].commons.js',
-            // children: true,
-            // async: true
-        }),
         new CopyWebpackPlugin([
             {
                 from: path.join(__dirname, webpackConstant.SrcPublicJsPath, 'webpack-dll'),
                 to: path.join(__dirname, webpackConstant.OutputPath, webpackConstant.OutputPublicJsPath, 'webpack-dll')
             }
-        ])
+        ]),
+        new HtmlWebpackPlugin({
+            title: 'Output Management',
+            template: path.resolve('./src/index.html'),
+            favicon: path.resolve('./src/favicon_16X16.ico'),
+            inject: true
+        }),
+        new HtmlWebpackIncludeAssetsPlugin({
+            assets: [
+                path.join(webpackConstant.OutputPublicJsPath, 'webpack-dll\/vendor.dll.js'),
+                // 如果有第三方css的话，可以继续加入 ↓
+                // path.join(webpackConstant.OutputPublicCssPath, 'some/path/of/vendor/*.css')
+            ],
+            files: ['index.html'],
+            append: false,
+            hash: true
+        }),
+        new CommonsChunkPlugin({
+            name: ['commons', 'manifest'],
+            filename: '[name].commons.[hash].js',
+            children: true,
+            /*
+            You can not specify a filename if you use the "async" option.
+            当你使用async选项是不能指定filename。
+            
+            async: true
+            */
+        })
     ]
 };
