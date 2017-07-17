@@ -21,3 +21,16 @@
         npm run start       --本地环境
         npm run build:dev   --模拟正式环境的打包，包含map文件
         npm run build:prod  --正式环境打包，去掉map文件、console、文件中的注释
+
+## 说明
+1.webpack.constant.js 声明一些webpack配置里需要的变量。
+
+2.webpack.dll.js 配置单独打包的第三方库
+
+3.webpack.base.js webpack的基本配置
+
+4.webpack.dev.js webpack-dev-server时使用，没有压缩代码，可定位错误代码行
+
+5.webpack.dev.dist.js 上机测试时可以用，没有压缩代码，可定位错误代码行
+
+6.webpack.prod.js 压缩代码，去掉打印信息
