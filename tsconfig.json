@@ -18,6 +18,8 @@
     },
     "include": [
         "./src/app/**/*.ts",
-        "./node_modules/@types/**/*.d.ts"
+        "./node_modules/@types/jquery/index.d.ts",
+        "./node_modules/@types/node/index.d.ts"
+        // ...需要用到的声明文件
     ]
 }

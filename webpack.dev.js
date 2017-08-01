@@ -13,7 +13,7 @@ module.exports = WebpackMerge(WebpackCommon, {
         contentBase: [path.join(__dirname, webpackConstant.OutputPath)],
         compress: true,
         https: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 8080,
         hot: true, //启用热替换时必须加上new webpack.HotModuleReplacementPlugin()
         historyApiFallback: {
