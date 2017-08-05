@@ -20,7 +20,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.join(__dirname, 'dist'),
         library: '[name]',
-        libraryTarget: 'commonjs' // 'amd' | 'commonjs' | 'umd'
+        libraryTarget: 'umd' // 'amd' | 'commonjs' | 'umd'
     },
     resolve: {
         extensions: ['.json', '.js', '.jsx', '.ts', '.tsx', '.css', '.scss']
