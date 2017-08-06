@@ -2,6 +2,7 @@
     "compilerOptions": {
         "sourceMap": false,
         "noImplicitAny": false,
+        "moduleResolution": "node",
         "module": "commonjs",
         "target": "es5",
         "experimentalDecorators": true,
@@ -15,7 +16,13 @@
             "es2017",
             "dom"
         ],
-        "pretty": true
+        "pretty": true,
+        "traceResolution": true, // 跟踪模块如何被编译器解析的。
+        "noUnusedLocals": true, // 不允许有未使用的局部变量
+        "noUnusedParameters": true, // 不允许有未使用的参数
+        "skipLibCheck": true, // 编译时跳过d.ts的类型检查提高编译效率
+        "declaration": false,
+        "declarationDir": "./declaration" // 指定生成的d.ts的输出目录
     },
     "include": [
         "./src/app/**/*.ts",
