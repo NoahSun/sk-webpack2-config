@@ -20,7 +20,9 @@
         "traceResolution": true, // 跟踪模块如何被编译器解析的。
         "noUnusedLocals": true, // 不允许有未使用的局部变量
         "noUnusedParameters": true, // 不允许有未使用的参数
-        "skipLibCheck": true // 编译时跳过d.ts的类型检查提高编译效率
+        "skipLibCheck": true, // 编译时跳过d.ts的类型检查提高编译效率
+        "noEmitHelpers": false, // 不在每个用到辅助库方法的文件都生成一次
+        "importHelpers": true // 使用导入的方法导入辅助库
     },
     "include": [
         "./src/app/**/*.ts",
