@@ -21,11 +21,11 @@
         "skipLibCheck": true, // 编译时跳过d.ts的类型检查提高编译效率
         "noEmitHelpers": false, // 不在每个用到辅助库方法的文件都生成一次
         "importHelpers": true, // 使用导入的方法导入辅助库
-        "alwaysStrict": true, //使用严格模式
-        "typeRoots": [
+        "alwaysStrict": true, // 使用严格模式
+        "typeRoots": [ // 指定声明文件的根目录
             "./node_modules/@types"
         ],
-        "types": [
+        "types": [ // 指定声明文件中哪些包才能被编译
             "jquery",
             "node"
         ]
