@@ -1,0 +1,8 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": false,
+        "declaration": true,
+        "declarationDir": "./declaration" // 指定生成的d.ts的输出目录
+    }
+}

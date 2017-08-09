@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "sourceMap": false,
         "noImplicitAny": false,
         "moduleResolution": "node",
         "module": "commonjs",
@@ -20,16 +19,19 @@
         "noUnusedLocals": true, // 不允许有未使用的局部变量
         "noUnusedParameters": true, // 不允许有未使用的参数
         "skipLibCheck": true, // 编译时跳过d.ts的类型检查提高编译效率
-        "declaration": true,
-        "declarationDir": "./declaration", // 指定生成的d.ts的输出目录
         "noEmitHelpers": false, // 不在每个用到辅助库方法的文件都生成一次
         "importHelpers": true, // 使用导入的方法导入辅助库
-        "alwaysStrict": true //使用严格模式
+        "alwaysStrict": true, //使用严格模式
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "jquery",
+            "node"
+        ]
     },
     "include": [
-        "./src/app/**/*.ts",
-        "./node_modules/@types/jquery/index.d.ts",
-        "./node_modules/@types/node/index.d.ts"
+        "./src/app/**/*.ts"
         // ...需要用到的声明文件
     ]
 }
