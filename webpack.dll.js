@@ -8,8 +8,10 @@ const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
  * VENDORS: 类库提供者
  */
 const VENDORS = [
-    'jquery/dist/jquery.min.js',
     // 'jquery/dist/jquery.slim.min.js',   //去除了ajax模块
+    'jquery/dist/jquery.min.js',
+    'tslib', //typescript的辅助库，会自动使用tslib.es6.js
+    // 'tslib/tslib.js' //兼容低版本浏览器
 ];
 
 module.exports = {
