@@ -24,7 +24,7 @@ module.exports = webpackMerge(WebpackCommon, {
                     {
                         loader: "awesome-typescript-loader",
                         options: {
-                            configFileName: path.join(__dirname, 'tsconfig.json')
+                            configFileName: path.join(__dirname, 'tsconfig.prod.json')
                         }
                     }
                 ]
