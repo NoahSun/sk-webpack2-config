@@ -28,6 +28,19 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(jsx?)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            name: 'public/fonts/[name].[ext]',
+                            cacheDirectory: true //启用编译结果的缓存，大幅提高编译速度
+                        }
+                    }
+                ]
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: [
                     {

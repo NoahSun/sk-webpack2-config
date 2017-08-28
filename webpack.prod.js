@@ -24,6 +24,9 @@ module.exports = webpackMerge(WebpackCommon, {
                     {
                         loader: "awesome-typescript-loader",
                         options: {
+                            useBabel: false,
+                            useCache: false,    //使用babel时打开可减少编译时间
+                            babelCore: undefined,   //babel-core不在node_modules中时设置，undefined时默认在node_modules中查找babel-core
                             configFileName: path.join(__dirname, 'tsconfig.prod.json')
                         }
                     }
@@ -74,7 +77,7 @@ module.exports = webpackMerge(WebpackCommon, {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(['dist/**'], {
+        new CleanWebpackPlugin(['dist/**', 'declaration/**'], {
             root: __dirname,
             verbose: true,
             dry: false,

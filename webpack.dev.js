@@ -69,6 +69,9 @@ module.exports = WebpackMerge(WebpackCommon, {
                     {
                         loader: "awesome-typescript-loader",
                         options: {
+                            useBabel: false,
+                            useCache: false,    //使用babel时打开可减少编译时间
+                            babelCore: undefined,   //babel-core不在node_modules中时设置
                             configFileName: path.join(__dirname, 'tsconfig.dev.json')
                         }
                     }
@@ -118,7 +121,7 @@ module.exports = WebpackMerge(WebpackCommon, {
     plugins: [
         new DefinePlugin({
             'process.env': {
-                'NODE_ENV': '"develop"'
+                'NODE_ENV': '"development"'
             }
         }),
         new CheckerPlugin(),

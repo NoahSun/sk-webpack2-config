@@ -1,0 +1,56 @@
+{
+    "presets": [
+        "react", //使用react时需要加上
+        "stage-0"
+    ],
+    "plugins": [
+        "transform-decorators-legacy", //装饰器的编译，Babel 7将会默认加入到stage-0中
+        [
+            "transform-class-properties",
+            {
+                "spec": true //类属性被定义后，在编译时将使用Object.defineProperty，就算没有被初始化
+            }
+        ],
+        [
+            "transform-object-rest-spread", //可使用对象展开语法
+            {
+                "useBuiltIns": true //是否直接使用Object.assign
+            }
+        ],
+        [
+            "transform-react-jsx", //不使用react库可删除此设置
+            {
+                "useBuiltIns": true //是否直接使用Object.assign
+            }
+        ],
+        "transform-do-expressions", //jsx中使用do语法，就可以直接在xml标签中使用if-else
+        "transform-runtime",
+        "external-helpers" //将帮助函数放置在生成代码的顶端，就不会在用到的地方多次生成
+    ],
+    "ignore": [], //忽略的文件路径
+    "env": {
+        // 根据process.env.NODE_ENV的值设置对应的配置
+        "development": {
+            "presets": [
+                "react-hmre" //react热替换和错误跟踪
+            ]
+        },
+        "production": {
+            "presets": [
+                [
+                    "env", //编译后的使用环境
+                    {
+                        "useBuiltIns": true,
+                        "targets": {
+                            "browsers": [
+                                ">= 1%",
+                                "IOS >= 7",
+                                "Andorid >= 4.0"
+                            ]
+                        }
+                    }
+                ]
+            ]
+        }
+    }
+}
