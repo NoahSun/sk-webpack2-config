@@ -13,6 +13,7 @@ const WebpackCommon = require('./webpack.base');
 
 module.exports = WebpackMerge(WebpackCommon, {
     output: {
+        path: path.join(__dirname, webpackConstant.OutputDistPath),
         publicPath: webpackConstant.ProdPublicPath
     },
     module: {

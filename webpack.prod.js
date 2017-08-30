@@ -15,6 +15,7 @@ const HashedModuleIdsPlugin = webpack.HashedModuleIdsPlugin;
 
 module.exports = webpackMerge(WebpackCommon, {
     output: {
+        path: path.join(__dirname, webpackConstant.OutputBuildPath),
         publicPath: webpackConstant.ProdPublicPath
     },
     module: {
