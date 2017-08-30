@@ -4,11 +4,15 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 const { CheckerPlugin } = require('awesome-typescript-loader');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const DefinePlugin = webpack.DefinePlugin;
 
 const WebpackCommon = require('./webpack.base');
 
 module.exports = WebpackMerge(WebpackCommon, {
+    output: {
+        path: path.join(__dirname, webpackConstant.OutputPath),
+    },
     devServer: {
         contentBase: [path.join(__dirname, webpackConstant.OutputPath)],
         compress: true,
@@ -124,6 +128,12 @@ module.exports = WebpackMerge(WebpackCommon, {
                 'NODE_ENV': '"development"'
             }
         }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, webpackConstant.SrcPublicJsPath, 'webpack-dll'),
+                to: path.join(__dirname, webpackConstant.OutputPath, webpackConstant.OutputPublicJsPath, 'webpack-dll')
+            }
+        ]),
         new CheckerPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
