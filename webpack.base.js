@@ -5,7 +5,6 @@ const ProvidePlugin = webpack.ProvidePlugin;
 const DllReferencePlugin = webpack.DllReferencePlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
