@@ -32,11 +32,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: "babel-loader",
-                        options: {
-                            name: 'public/fonts/[name].[ext]',
-                            cacheDirectory: true //启用编译结果的缓存，大幅提高编译速度
-                        }
+                        loader: "babel-loader"
                     }
                 ]
             },
