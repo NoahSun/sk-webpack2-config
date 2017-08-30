@@ -83,6 +83,12 @@ module.exports = webpackMerge(WebpackCommon, {
             dry: false,
             watch: true
         }),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(__dirname, webpackConstant.SrcPublicJsPath, 'webpack-dll'),
+                to: path.join(__dirname, webpackConstant.OutputBuildPath, webpackConstant.OutputPublicJsPath, 'webpack-dll')
+            }
+        ]),
         new DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'

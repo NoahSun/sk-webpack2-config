@@ -3,5 +3,7 @@ module.exports = {
     OutputPublicJsPath: 'public/js',
     OutputPublicCssPath: 'public/css',
     OutputPath: 'dist',
+    OutputDistPath: 'dist',
+    OutputBuildPath: 'build',
     ProdPublicPath: '/test/dist/'
 }

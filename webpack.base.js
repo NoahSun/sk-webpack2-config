@@ -72,12 +72,6 @@ module.exports = {
             'window.$': 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new CopyWebpackPlugin([
-            {
-                from: path.join(__dirname, webpackConstant.SrcPublicJsPath, 'webpack-dll'),
-                to: path.join(__dirname, webpackConstant.OutputPath, webpackConstant.OutputPublicJsPath, 'webpack-dll')
-            }
-        ]),
         new HtmlWebpackPlugin({
             title: 'Output Management',
             template: path.resolve('./src/index.html'),
