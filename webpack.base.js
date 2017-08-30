@@ -18,7 +18,6 @@ module.exports = {
     output: {
         filename: '[name].bundle.[hash].js',
         chunkFilename: '[name].bundle.[hash].js', //如果没有chunkname，默认为[id]+filename命名格式
-        path: path.join(__dirname, 'dist'),
         library: '[name]',
         libraryTarget: 'umd' // 'amd' | 'commonjs' | 'umd'
     },
