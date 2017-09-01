@@ -17,12 +17,12 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.[hash].js',
-        chunkFilename: '[name].bundle.[hash].js', //如果没有chunkname，默认为[id]+filename命名格式
+        chunkFilename: '[name].bundle.[hash].js', //如果没有chunkname，代码分割的时候默认为[id]+filename命名格式
         library: '[name]',
         libraryTarget: 'umd' // 'amd' | 'commonjs' | 'umd'
     },
     resolve: {
-        extensions: ['.json', '.js', '.jsx', '.ts', '.tsx', '.css', '.scss']
+        extensions: ['.json', '.js', '.jsx', '.ts', '.tsx', '.css', '.scss'] //引入模块时不写后缀，编译时后在此数组中遍历查找相应后缀的文件
     },
     module: {
         rules: [
