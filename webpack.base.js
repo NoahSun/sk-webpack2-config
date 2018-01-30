@@ -13,7 +13,8 @@ const DefinePlugin = webpack.DefinePlugin;
 
 module.exports = {
     entry: {
-        index: './src/app/index.ts'
+        index: './src/app/index.ts',
+        splittingCode: './src/app/splitting_code/index.js'
     },
     output: {
         filename: '[name].bundle.[hash].js',

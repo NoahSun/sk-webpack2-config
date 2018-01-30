@@ -1,7 +1,7 @@
 {
-    "extends": "./tsconfig.json", // 继承其他配置文件的路径
+    "extends": "./tsconfig.json",
     "compilerOptions": {
         "sourceMap": true,
-        "traceResolution": false // 跟踪模块如何被编译器解析的。
+        "traceResolution": false
     }
 }

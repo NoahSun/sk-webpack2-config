@@ -125,7 +125,7 @@ module.exports = WebpackMerge(WebpackCommon, {
     plugins: [
         new DefinePlugin({
             'process.env': {
-                'NODE_ENV': '"development"'
+                'NODE_ENV': JSON.stringify('development')
             }
         }),
         new CopyWebpackPlugin([
